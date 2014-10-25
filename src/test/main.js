@@ -1,20 +1,31 @@
 // jshint mocha: true
 'use strict';
 
-import {x as importedX} from '../..';
+import utils from '../../dist/modules/utils';
+import print from '../../dist/modules/print';
 
 require('should');
 
-describe('Skeleton', function() {
-	it('should import from this package\'s entry point', function() {
-		importedX.should.equal('x');
+describe('utils', function() {
+	it('should sum 1 + 1', function() {
+		utils.sum(1,1).should.equal(2);
 	});
+
+	it('should get the default value', function() {
+		utils.message().should.equal('Hello World!');
+	});
+
+	it('should get the new value', function() {
+		utils.message('foo bar').should.equal('foo bar');
+	});
+
+	it('should get the the message', function() {
+		print('Jaydson').should.equal('print Jaydson');
+	});
+
 	it('should support ES6 in the unit tests too', function() {
 		let foo = 'bar';
 		foo.should.equal('bar');
 	});
 
-	it('should copy non-js files to dist', function() {
-		require('../config.json').x.should.equal('x');
-	});
 });

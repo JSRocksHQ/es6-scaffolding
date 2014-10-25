@@ -1,5 +1,7 @@
+// Block scope with let
 let print = function (what) {
-	return '[from print module]' + what;
+	// Template strings
+	return `print ${what}`;
 };
 
 export default print;

@@ -23,6 +23,10 @@ describe('utils', function() {
 		print('Jaydson').should.equal('print Jaydson');
 	});
 
+	it('should get the the message', function() {
+		print('john').should.equal('print john');
+	});
+
 	it('should support ES6 in the unit tests too', function() {
 		let foo = 'bar';
 		foo.should.equal('bar');
